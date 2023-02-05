@@ -15,10 +15,12 @@ This library provides powerful tools that help developers build graphical interf
 
 
 ## How to install
-#### on pythonista
+### on pythonista
 You can install the library using this code:
-> It should be on 'This iPad' files section.
+Put the code on a standalone file, not inside any sub-folders.
 
-`pyton
-print("Hello")
 `
+import requests; exec(requests.get("https://bit.ly/FlixyUI").text)
+`
+
+You can also install it from github here and then insert it manually on the `Python modules/site-package-3`
