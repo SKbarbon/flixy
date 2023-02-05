@@ -29,10 +29,13 @@ You can also install it from github here and then insert it manually on the `Pyt
 This is a simple `Hello, world!` interface:
 
 `
+
 from flixy import *
 
 def Home(view:View):
 	view.add(Text("Hello, world!"))
 
 app(target=Home)
+
 `
+[![asciicast](https://videos.files.wordpress.com/3EUWRjDy/rpreplay_final1675629474.mp4)
