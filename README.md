@@ -18,6 +18,7 @@ This library provides powerful tools that help developers build graphical interf
 #### on pythonista
 You can install the library using this code:
 > It should be on 'This iPad' files section.
-`
+
+`pyton
 print("Hello")
 `
