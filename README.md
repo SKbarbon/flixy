@@ -19,7 +19,7 @@ from flixy import learn
 learn()
 # have fun :)
 ```
- ### example
+ ### example 😇
  This is a simple hello, world example app:
  ```python
 from flixy import *
@@ -31,5 +31,7 @@ def main (page:flixy.Page):
 flixy.app(target=main)
  ```
  Result:
+ 
 <img src="https://user-images.githubusercontent.com/86029286/230714340-66fa77ee-9789-45d1-af73-79cda70a5550.jpeg" data-canonical-src="[[https://gyazo.com/eb5c5741b6a9a16c692170a41a49c858.png](https://user-images.githubusercontent.com/86029286/230714340-66fa77ee-9789-45d1-af73-79cda70a5550.jpeg)]([https://user-images.githubusercontent.com/86029286/230713728-41878deb-5714-4a85-a3b5-5225c33729da.png](https://user-images.githubusercontent.com/86029286/230714340-66fa77ee-9789-45d1-af73-79cda70a5550.jpeg))" width="500" />
  
+
