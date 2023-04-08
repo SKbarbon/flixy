@@ -33,6 +33,7 @@ class Text (object):
 		l.alpha = self.opacity
 		l.text_color = self.color
 		l.background_color = self.bgcolor
+		l.bg_color = self.bgcolor
 		l.alignment = self.text_align
 		
 		if self.font_family == "default":

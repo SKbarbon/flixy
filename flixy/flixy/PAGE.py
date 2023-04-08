@@ -79,6 +79,8 @@ class Page (object):
 			else: self.__ui_view.remove_subview(i)
 	
 	def show(self):
+		if self.self_ui.on_screen:
+			raise NameError("The page is already on screen.")
 		self.__ui_view.present("fullscreen", hide_title_bar=True)
 		threading.Thread(target=self.__background_thread, daemon=True).start()
 	

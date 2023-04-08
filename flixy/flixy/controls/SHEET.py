@@ -6,7 +6,7 @@ import time
 
 class Sheet (object):
 	
-	def __init__ (self, bgcolor="white", border_radius=12, show=True, on_hide=None):
+	def __init__ (self, bgcolor="white", border_radius=12, show=False, on_hide=None):
 		self.__self_ui = ui.View(alpha=0.0)
 		self.__background_hider = ui.Button(bg_color="#474747", alpha=0.0, action=self.__custom_hide)
 		
