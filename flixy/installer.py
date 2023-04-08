@@ -174,14 +174,14 @@ def save_into_site_package():
 	documents_folder = os.path.join(home_dir, "Documents")
 	
 	# Get the path of site-packages
-	site_packages = os.path.join(documents_folder, "site-packages", "foldery")
+	site_packages = os.path.join(documents_folder, "site-packages", "flixy")
 	
 	# Remove the destination folder if it exists
 	if os.path.exists(site_packages):
 	    shutil.rmtree(site_packages)
 	
 	# Move the source folder to the destination folder
-	shutil.move(extracted_folder_path, site_packages)
+	shutil.move(f"{extracted_folder_path}/flixy", site_packages)
 	
 	# to clear every thing
 	os.remove(zip_file_path)
