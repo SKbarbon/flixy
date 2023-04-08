@@ -12,6 +12,7 @@ Then a simple little window will shows up, follow the instructions and you it wi
 
 <img src="https://user-images.githubusercontent.com/86029286/230713728-41878deb-5714-4a85-a3b5-5225c33729da.png" data-canonical-src="[https://gyazo.com/eb5c5741b6a9a16c692170a41a49c858.png](https://user-images.githubusercontent.com/86029286/230713728-41878deb-5714-4a85-a3b5-5225c33729da.png)" width="500" />
 
+The library contain an auto-updater, so if there is any update for the library you will be notice.
 ## usage 🤝
 To learn how to use the library, you can type this command on pythonista:
 ```python
