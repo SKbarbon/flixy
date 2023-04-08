@@ -185,6 +185,7 @@ def save_into_site_package():
 	
 	# to clear every thing
 	os.remove(zip_file_path)
+	shutil.rmtree("__folder")
 
 
 def start_install (cls):
