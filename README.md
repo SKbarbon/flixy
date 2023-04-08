@@ -16,8 +16,10 @@ The library contain an auto-updater, so if there is any update for the library y
 ## usage 🤝
 To learn how to use the library, you can type this command on pythonista:
 ```python
-from flixy import learn
-learn()
+from flixy import *
+import flixy
+
+flixy.learn_flixy()
 # have fun :)
 ```
  ### example 😇
