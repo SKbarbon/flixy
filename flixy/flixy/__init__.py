@@ -7,10 +7,12 @@ from .controls.APPBAR import AppBar
 from .controls.TEXT import Text
 from .controls.BUTTON import Button
 from .controls.ROW import Row
+from .controls.COLUMN import Column
 from .controls.TEXTVIEW import TextView
 from .controls.WEBVIEW import WebView
 from .controls.TEXTFIELD import TextField
 from .controls.NAVIGATOR import Navigate
+from .controls.SHEET import Sheet
 
 from .Tools.subscribers.text_subscribe import textSubscribe
 from .Tools.subscribers.call_on_change import callOnChange

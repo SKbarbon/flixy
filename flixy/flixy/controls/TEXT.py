@@ -43,13 +43,18 @@ class Text (object):
 		l.width = self.width
 		l.height = self.height
 		
+		# set the expand
 		if self.parent != None:
 			if self.expand_width:
 				self.__self_ui.width = self.parent.width
 				self.width = self.__self_ui.width
 			if self.expand_height:
-				self.__self_ui.height = self.parent.height
-				self.height = self.__self_ui.height
+				if self.page.appbar == None or self.page != self.parent:
+					self.__self_ui.height = self.parent.height
+					self.height = self.__self_ui.height
+				else:
+					self.__self_ui.height = self.parent.height - self.page.appbar.self_ui.height
+					self.height = self.__self_ui.height
 		
 		
 	
@@ -70,8 +75,6 @@ class Text (object):
 	@property
 	def self_ui(self):
 		return self.__self_ui
-	
-	
 	
 	
 	

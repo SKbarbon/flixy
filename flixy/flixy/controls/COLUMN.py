@@ -3,7 +3,7 @@ from ..Tools.action import do_action
 
 
 
-class Row (object):
+class Column (object):
 	
 	def __init__ (self, controls=None, scroll=True, auto_end_following = False, width = 200, height = 75, bgcolor = None, expand_width = False, expand_height = False,
 	border_radius = 8, spacing=5, on_scroll=None, on_update=None):
@@ -70,16 +70,19 @@ class Row (object):
 		for i in self.controls:
 			i.update()
 		self.reposition_controls()
+		
 		# update the scroll
-		max_width = 0
+		max_height = 0
 		for i in self.controls:
-			max_width = max_width + i.width + self.spacing
+			max_height = max_height + i.height + self.spacing
 		
-		self.self_ui.content_size = max_width, 0
-		self.self_ui.content_offset = self.self_ui.content_offset[0], 0
+		self.self_ui.content_size = 0, max_height
+		self.self_ui.content_offset = 0, self.self_ui.content_offset[1]
 		
-		# on update action
+		# on update
 		do_action(self.on_update, [])
+	
+	
 	
 	def add (self, control):
 		if self.page == None:
@@ -87,15 +90,15 @@ class Row (object):
 		control.respown(self, self.page)
 		flixy_control = control
 		control = control.self_ui
-		all_widths = 0
+		all_height = 0
 		
 		for i in self.controls:
-			all_widths = all_widths + i.width + self.spacing
+			all_height = all_height + i.height + self.spacing
 		
 		self.controls.append(flixy_control)
 		control_ui_class = control
-		control_ui_class.y = self.height / 2 - control_ui_class.height / 2
-		control_ui_class.x = all_widths
+		control_ui_class.y = all_height
+		control_ui_class.x = self.width / 2 - control_ui_class.width / 2
 		self.self_ui.add_subview(control_ui_class)
 		self.update()
 		
@@ -143,13 +146,13 @@ class Row (object):
 	
 	# actions
 	def __on_scroll (self):
-		self.self_ui.content_offset = self.self_ui.content_offset[0], 0
+		self.self_ui.content_offset = 0, self.self_ui.content_offset[1]
 		self.__offset_x = self.self_ui.content_offset[0]
 		self.__offset_y = self.self_ui.content_offset[1]
 		do_action(self.on_scroll, [self])
 	
 	def __follow_the_end (self):
-		self.self_ui.content_offset = self.self_ui.content_size[0], 0
+		self.self_ui.content_offset = 0, self.self_ui.content_size[1]
 	
 	
 	@property
@@ -158,7 +161,7 @@ class Row (object):
 	
 	@property
 	def stack (self):
-		return "h"
+		return "v"
 	
 	
 	@property

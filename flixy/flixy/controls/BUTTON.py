@@ -6,7 +6,7 @@ from ..Tools.action import do_action
 class Button (object):
 	
 	def __init__ (self, title="", bgcolor="#4082ff", title_color="white", bgcolor_after_hover="#80acff", on_click=None, width=250, height=50, border_radius=15
-	, font_size=16, font_family='default', opacity=1.0, expand_width=False, expand_height=False):
+	, font_size=16, font_family='default', opacity=1.0, expand_width=False, expand_height=False, on_hover=None):
 		self.__self_ui = pythonista_ui_View()
 		self.__self_ui.self_class = self
 		self.__self_ui.on_mouse_hover = self.__on_hover
@@ -25,13 +25,17 @@ class Button (object):
 		self.bgcolor_after_hover = bgcolor_after_hover
 		self.width = width
 		self.height = height
-		self.on_click = on_click
 		self.border_radius = border_radius
 		self.font_size = font_size
 		self.font_family = font_family
 		self.opacity = opacity
 		self.expand_width = expand_width
 		self.expand_height = expand_height
+		
+		# actions
+		self.on_click = on_click
+		self.on_hover = on_hover
+		
 		self.update()
 	
 	def update(self):
@@ -51,18 +55,23 @@ class Button (object):
 				t.font = self.page.font_family, self.font_size
 		else:
 			t.font = self.font_family, self.font_size
-		t.width = v.width
-		t.height = v.height
 		
+		# set the expand
 		if self.parent != None:
 			if self.expand_width:
 				self.__self_ui.width = self.parent.width
 				self.width = self.__self_ui.width
 			if self.expand_height:
-				self.__self_ui.height = self.parent.height
-				self.height = self.__self_ui.height
+				if self.page.appbar == None or self.page != self.parent:
+					self.__self_ui.height = self.parent.height
+					self.height = self.__self_ui.height
+				else:
+					self.__self_ui.height = self.parent.height - self.page.appbar.self_ui.height
+					self.height = self.__self_ui.height
 		
-		self.__title_view.center = (self.__self_ui.width * 0.5, self.__self_ui.height * 0.5)
+		t.width = v.width
+		t.height = v.height
+		t.center = (self.__self_ui.width * 0.5, self.__self_ui.height * 0.5)
 	
 	def respown (self, parent, page):
 		self.parent = parent
@@ -81,6 +90,8 @@ class Button (object):
 				self.self_ui.background_color = self.bgcolor_after_hover
 			else:
 				self.self_ui.background_color = self.bgcolor
+		
+		do_action(self.on_hover, [self])
 		ui.animate(change, duration=0.3)
 	
 	

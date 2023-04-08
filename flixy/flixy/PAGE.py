@@ -1,5 +1,6 @@
 from .Tools.action import do_action
 from .pythonista_ui.VIEW import pythonista_ui_View
+from .controls.SHEET import Sheet
 import ui
 import threading
 import time
@@ -13,8 +14,6 @@ class Page (object):
 		self.bgcolor = "black"
 		self.title = ""
 		self.__appbar = None
-		self.on_hover = None
-		self.on_touch = None
 		self.font_family = "Avenir"
 		self.width = 0
 		self.height = 0
@@ -51,6 +50,7 @@ class Page (object):
 		
 	
 	def add (self, control):
+		# start add
 		control.respown(self, self)
 		flixy_control = control
 		control = control.self_ui
@@ -60,7 +60,9 @@ class Page (object):
 			all_heights = all_heights + self.appbar.self_ui.height + 25
 		
 		for i in self.controls:
-			all_heights = all_heights + i.height + self.spacing
+			if isinstance(i, Sheet): pass
+			else:
+				all_heights = all_heights + i.height + self.spacing
 		
 		self.controls.append(flixy_control)
 		
@@ -103,6 +105,9 @@ class Page (object):
 		self.controls = []
 		for i in new_controls:
 			self.add(i)
+		
+		self.appbar = self.__appbar
+		if self.__appbar != None: self.__appbar.update()
 			
 	def remove_control (self, control):
 		if control not in self.controls:

@@ -61,13 +61,18 @@ class WebView (object):
 		wv.height = self.height
 		wv.alpha = self.opacity
 		wv.bg_color = self.bgcolor
+		
 		if self.parent != None:
 			if self.expand_width:
 				self.__self_ui.width = self.parent.width
 				self.width = self.__self_ui.width
 			if self.expand_height:
-				self.__self_ui.height = self.parent.height
-				self.height = self.__self_ui.height
+				if self.page.appbar == None or self.page != self.parent:
+					self.__self_ui.height = self.parent.height
+					self.height = self.__self_ui.height
+				else:
+					self.__self_ui.height = self.parent.height - self.page.appbar.self_ui.height
+					self.height = self.__self_ui.height
 	
 	def respown(self, parent, page):
 		self.parent = parent

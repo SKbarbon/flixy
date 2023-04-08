@@ -49,6 +49,7 @@ class AppBar ():
 		
 		
 		b.width = 35
+		b.action = self.__custom_bar_action
 		b.tint_color = self.icon_color
 		b.height = 35
 		b.x = v.width - 80
@@ -56,8 +57,8 @@ class AppBar ():
 		b.image = ui.Image(self.btn_icon)
 	
 	
-	def __custom_bar_action (self):
-		pass
+	def __custom_bar_action (self, *args):
+		do_action(self.on_click_btn, [])
 	
 	
 	@property

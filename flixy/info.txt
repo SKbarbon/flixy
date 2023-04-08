@@ -1,0 +1,2 @@
+https://raw.githubusercontent.com/SKbarbon/flixy/main/installer.py
+https://raw.githubusercontent.com/SKbarbon/flixy/main/flixy.zip
