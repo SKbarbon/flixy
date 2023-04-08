@@ -11,7 +11,7 @@ import requests
 import json
 
 
-version = "1.1"
+version = "1.0"
 
 class update_flixy (object):
 	def __init__ (self, auto_run=True):
