@@ -1,4 +1,4 @@
 {
-  "version" : "1.1",
-  "news" : "1- Fix issue where the auto updater page shows up even if the library is up to date.\n*Please restart pythonista to apply all changes."
+  "version" : "1.2",
+  "news" : "2- Add more learn lessons.\n*Please restart pythonista to apply all changes."
 }
