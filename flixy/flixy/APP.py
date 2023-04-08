@@ -13,7 +13,7 @@ class app (object):
 		uf = update_flixy()
 		if develop:
 			def check():
-				if uf.is_there_new_update:
+				if uf.is_there_new_update():
 					uf.run()
 		threading.Thread(target=check).start()
 		
