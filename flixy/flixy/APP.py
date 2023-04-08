@@ -15,6 +15,6 @@ class app (object):
 			def check():
 				if uf.is_there_new_update():
 					uf.run()
-		threading.Thread(target=check).start()
+			threading.Thread(target=check).start()
 		
 		target(ThePage)

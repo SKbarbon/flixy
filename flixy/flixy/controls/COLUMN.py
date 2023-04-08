@@ -6,7 +6,7 @@ from ..Tools.action import do_action
 class Column (object):
 	
 	def __init__ (self, controls=None, scroll=True, auto_end_following = False, width = 200, height = 75, bgcolor = None, expand_width = False, expand_height = False,
-	border_radius = 8, spacing=5, on_scroll=None, on_update=None):
+	border_radius = 8, spacing=5, on_scroll=None, on_update=None, opacity=1.0):
 		
 		
 		class TheDelegate (object):
@@ -36,6 +36,7 @@ class Column (object):
 		self.expand_height = expand_height
 		self.border_radius = border_radius
 		self.spacing = spacing
+		self.opacity = opacity
 		
 		self.__offset_x = 0
 		self.__offset_y = 0
@@ -50,6 +51,7 @@ class Column (object):
 		v.scroll_enabled = self.scroll
 		v.width = self.width
 		v.height = self.height
+		v.alpha = self.opacity
 		v.bg_color = self.bgcolor
 		v.corner_radius = self.border_radius
 		

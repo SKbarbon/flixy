@@ -9,11 +9,12 @@ from .lessons.textfield import textfield_lesson
 from .lessons.webview import webview_lesson
 from .lessons.sheet import sheet_lesson
 from .lessons.navigate import navigate_lesson
+import ui
 
 
 class learn_flixy:
 	def __init__ (self):
-		app(target=self.App)
+		app(target=self.App, develop=False)
 	
 	def App(self, page):
 		page.on_resize = self.__on_resize
@@ -25,15 +26,24 @@ class learn_flixy:
 		self.page = page
 		
 		spliter = Row(expand_width=True, expand_height=True, scroll=False, spacing=0)
-		page.add(spliter)
+		if ui.get_window_size()[0] > 400:
+			page.add(spliter)
 		self.spliter = spliter
 		
 		selections_place = Column(width=spliter.width/4, expand_height=True)
-		spliter.add(selections_place)
+		if ui.get_window_size()[0] > 400:
+			spliter.add(selections_place)
+		else:
+			selections_place.expand_width = True
+			page.add(selections_place)
 		self.selections_place = selections_place
 		
-		preview_section = Column(width=spliter.width-(spliter.width/4), expand_height=True)
-		spliter.add(preview_section)
+		
+		if ui.get_window_size()[0] > 400:
+			preview_section = Column(width=spliter.width-(spliter.width/4), expand_height=True)
+			spliter.add(preview_section)
+		else:
+			preview_section = Navigate(page, [])
 		self.preview_section = preview_section
 		
 		title = Text("	Controls", size=28, expand_width=True, text_align=0)
@@ -67,8 +77,15 @@ class learn_flixy:
 		self.page.update()
 	
 	def __on_choose_page (self, btn):
-		func = self.get_page_function(btn.title)
-		func(self.preview_section)
+		if ui.get_window_size()[0] > 400:
+			func = self.get_page_function(btn.title)
+			func(self.preview_section)
+		else:
+			c = Column(expand_width=True, expand_height=True)
+			self.preview_section.controls = [c]
+			func = self.get_page_function(btn.title)
+			self.preview_section.show()
+			func(c)
 	
 	def close (self):
 		self.page.close()
