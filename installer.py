@@ -7,6 +7,8 @@ import sound
 import shutil
 import os
 
+
+
 v = ui.View()
 v.bg_color = "white"
 if ui.get_window_size()[0] > 770:
@@ -151,6 +153,43 @@ set_context(Download_btn)
 Download_btn.center = (context_view.width * 0.5, context_view.height * 0.5)
 
 
+def SetTemplates():
+	import requests
+	import os
+	# Get the home directory
+	home_dir = os.path.expanduser("~")
+	
+	# Create the path to the Documents folder
+	documents_folder = os.path.join(home_dir, "Documents")
+	
+	# Get the path of site-packages
+	Templates_folder = os.path.join(documents_folder, "Templates")
+	
+	script = """
+from flixy import *
+import flixy
+import random
+
+def main (page:flixy.Page):
+	def on_name_edit (textfield):
+		name = textfield.value
+		random_emoji = ["🤠", "🙂", "😃", "😄", "😇"]
+		greeting_text.value = f"Hello {name} {random.choice(random_emoji)}"
+		greeting_text.update()
+	greeting_text = flixy.Text("Type your name.", expand_width=True, height=50, size=30)
+	page.add(Text(""))
+	page.add(greeting_text)
+	name_input = flixy.TextField(placeholder="Your name..", bgcolor="#ffffff")
+	name_input.on_edit = on_name_edit
+	page.add(name_input)
+
+flixy.app(target=main)
+
+# To read the docs and learn about flixy, type: `flixy.learn_flixy()`
+# To hide the `swipe down with two fingers` alert, and to stop checking for library updates on background, type: `flixy.app(target=main, develop=False)`.
+	"""
+	open(f"{Templates_folder}/flixy ui.py", "w+", encoding="utf-8").write(script)
+
 
 def save_into_site_package():
 	import zipfile
@@ -225,6 +264,7 @@ def start_install (cls):
 		
 		set_title_and_describe("Saving..", "Saving the file into the site-package.")
 		save_into_site_package()
+		SetTemplates()
 		set_title_and_describe("Done 🤠!", "The library has been downloaded and saved!, now lets restart the app!")
 		
 		def restart(cls):
