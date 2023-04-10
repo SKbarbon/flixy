@@ -15,14 +15,14 @@ Then a simple little window will shows up, follow the instructions and you it wi
 
 The library contain an auto-updater, so if there is any update for the library you will be notice.
 
-### for deskto:
+### for desktop:
 Open your cmd, create a venv by:
 ```
 python3 -m venv venv
 ```
 Then install the library using this command:
 ```cmd
-pip install flixy2app==0.2
+pip install flixy2app
 ```
 Note: `flixy` is pythonista-focused library. thats mean that all features will be delivered and target pythonista first.
 
