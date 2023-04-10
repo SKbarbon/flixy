@@ -22,7 +22,7 @@ python3 -m venv venv
 ```
 Then install the library using this command:
 ```cmd
-pip install flixy2app
+pip install flixy2app --upgrade
 ```
 Note: `flixy` is pythonista-focused library. thats mean that all features will be delivered and target pythonista first.
 
