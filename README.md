@@ -37,17 +37,20 @@ flixy.app(target=main)
  
 <img src="https://user-images.githubusercontent.com/86029286/230714340-66fa77ee-9789-45d1-af73-79cda70a5550.jpeg" data-canonical-src="[[https://gyazo.com/eb5c5741b6a9a16c692170a41a49c858.png](https://user-images.githubusercontent.com/86029286/230714340-66fa77ee-9789-45d1-af73-79cda70a5550.jpeg)]([https://user-images.githubusercontent.com/86029286/230713728-41878deb-5714-4a85-a3b5-5225c33729da.png](https://user-images.githubusercontent.com/86029286/230714340-66fa77ee-9789-45d1-af73-79cda70a5550.jpeg))" width="500" />
  
-## flixy and desktop
+## flixy and desktop 🖥️!
 You can use pythonista flixy on your mac and windows but with big limitations. some of them:
 - No WebView support.
 - You cant use pythonista platform-specific librarys like `ui`.
+
+All new flixy features will delivered and target pythonista-platform first. Then after a while it will support desktop flixy.
+Please create an issue if you find any.
 
 To install it on your desktop:
 ```cmd
 pip install flixy2app==0.2
 ```
 
-## Convert your pythonista flixy into macOS and windows app
+## Convert your pythonista flixy into macOS and windows app 🪄!!
 1- install `flixy2app` using `pip` .
 2- Bring your pythonista file.
 3- Use this command: `python3 -m flixy2app.generate`. follow the Instructions, then done.
