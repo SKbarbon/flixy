@@ -49,7 +49,7 @@ class TextView (object):
 		tv.bg_color = self.bgcolor
 		tv.corner_radius = self.border_radius
 		if self.font_family == "default":
-			if self.page != None:
+			if self.page is not None:
 				tv.font = self.page.font_family, self.font_size
 		else:
 			tv.font = self.font_family, self.font_size
@@ -60,12 +60,12 @@ class TextView (object):
 		tv.alignment = self.text_align
 		
 		
-		if self.parent != None:
+		if self.parent is not None:
 			if self.expand_width:
 				self.__self_ui.width = self.parent.width
 				self.width = self.__self_ui.width
 			if self.expand_height:
-				if self.page.appbar == None or self.page != self.parent:
+				if self.page.appbar is None or self.page != self.parent:
 					self.__self_ui.height = self.parent.height
 					self.height = self.__self_ui.height
 				else:
@@ -109,7 +109,7 @@ class textViewDelegate (object):
 		do_action(self.self_class.on_start_edit, [self.self_class])
 	def textview_did_end_editing(self, textfield):
 		return True
-	def textview_should_return(self, textfield):
+	def textview_should_return(self, textview):
 		textview.end_editing()
 		do_action(self.self_class.on_done_edit, [self.self_class])
 		return True
