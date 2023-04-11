@@ -5,7 +5,7 @@ import ui
 class pythonista_ui_View (ui.View):
 	
 	def __init__ (self, self_class=None):
-		ui.View.__init__(self)
+		super().__init__(self)
 		UIHoverGestureRecognizer = ObjCClass('UIHoverGestureRecognizer')
 		handler = UIGestureRecognizerDelegate(UIHoverGestureRecognizer, self, self.hover)
 		

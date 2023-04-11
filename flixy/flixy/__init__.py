@@ -13,6 +13,8 @@ from .controls.WEBVIEW import WebView
 from .controls.TEXTFIELD import TextField
 from .controls.NAVIGATOR import Navigate
 from .controls.SHEET import Sheet
+from .controls.SLIDER import Slider
+from .controls.SWITCH import Switch
 
 from .Tools.subscribers.text_subscribe import textSubscribe
 from .Tools.subscribers.call_on_change import callOnChange

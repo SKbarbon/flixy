@@ -2,7 +2,7 @@ from .PAGE import Page
 import ui
 import dialogs
 import threading
-from .update import update_flixy
+from .update import UpdateFlixy
 
 
 class app (object):
@@ -11,7 +11,7 @@ class app (object):
 		ThePage = Page()
 		ThePage.show()
 		
-		uf = update_flixy()
+		uf = UpdateFlixy()
 		if develop:
 			dialogs.hud_alert("Swipe down with two fingers to close.")
 			def check():

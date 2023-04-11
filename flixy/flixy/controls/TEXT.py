@@ -1,5 +1,5 @@
 import ui
-
+from ..Tools.expander import expand_control
 
 class Text (object):
 	
@@ -45,17 +45,7 @@ class Text (object):
 		l.height = self.height
 		
 		# set the expand
-		if self.parent != None:
-			if self.expand_width:
-				self.__self_ui.width = self.parent.width
-				self.width = self.__self_ui.width
-			if self.expand_height:
-				if self.page.appbar == None or self.page != self.parent:
-					self.__self_ui.height = self.parent.height
-					self.height = self.__self_ui.height
-				else:
-					self.__self_ui.height = self.parent.height - self.page.appbar.self_ui.height
-					self.height = self.__self_ui.height
+		expand_control(self)
 		
 		
 	
