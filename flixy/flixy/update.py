@@ -162,8 +162,7 @@ class UpdateFlixy:
 
 	def library_news(self):
 		url = "https://raw.githubusercontent.com/SKbarbon/flixy/main/info.json"
-		data = requests.get(url).text
-		return str(json.loads(data)["news"])
+		return requests.get(url).json()["news"]
 
 	def is_there_new_update(self):
 		url = "https://raw.githubusercontent.com/SKbarbon/flixy/main/info.json"
