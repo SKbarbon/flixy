@@ -1,4 +1,4 @@
 {
-  "version" : "1.4",
+  "version" : "1.5",
   "news" : "1- Support pythonista Templates, you must be able to create flixy ui scripts from the create new file sheet.\n2- On develop mode you will see a dialog that tell you how to close the window.\n*Please restart pythonista to apply all changes."
 }
