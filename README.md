@@ -28,6 +28,14 @@ Note: `flixy` is pythonista-focused library. thats mean that all features will b
 
 To convert your flixy into executable file, go here: [pytonista flixy into app](https://github.com/SKbarbon/flixy#convert-your-pythonista-flixy-into-macos-and-windows-app-)
 
+### Upgrade the library 🚀!
+on pythonista, there is an auto-updater on the background of the flixy scripts that will check for new updates.
+But on the desktop you need to do that manually. Run this command bellow to update on desktop:
+```cmd
+pip uninstall library
+pip install library --upgrade
+```
+
 ## usage 🤝
 To learn how to use the library, you can type this command on pythonista:
 ```python
