@@ -3,7 +3,7 @@ A pythonista UI library for building powerful UI for iOS & iPadOS using easy-to-
 flixy support the new cases of problems with UI, like stage manager and window resizing on iPad.
 
 ## Installation ⬇
-### for Moile:
+### for Mobile:
 To install this library on your pythonista, just copy then paste then run this command!:
 ```python
 import requests; exec(requests.get("https://bit.ly/flixy-installer").text);
