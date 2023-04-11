@@ -6,7 +6,6 @@ import sys
 import threading
 import time
 import zipfile
-
 import requests
 import sound
 import ui
@@ -162,11 +161,13 @@ class UpdateFlixy:
 
 	def library_news(self):
 		url = "https://raw.githubusercontent.com/SKbarbon/flixy/main/info.json"
-		return requests.get(url).json()["news"]
+		data = requests.get(url).text
+		return str(json.loads(data)["news"])
 
 	def is_there_new_update(self):
 		url = "https://raw.githubusercontent.com/SKbarbon/flixy/main/info.json"
-		return requests.get(url).json()["version"] != version
+		result = json.loads(requests.get(url).text)
+		return str(result["version"]) != str(version)
 
 
 if __name__ == "__main__":
