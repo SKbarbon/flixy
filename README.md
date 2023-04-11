@@ -32,8 +32,8 @@ To convert your flixy into executable file, go here: [pytonista flixy into app](
 on pythonista, there is an auto-updater on the background of the flixy scripts that will check for new updates.
 But on the desktop you need to do that manually. Run this command bellow to update on desktop:
 ```cmd
-pip uninstall library
-pip install library --upgrade
+pip uninstall flixy2app
+pip install flixy2app --upgrade
 ```
 
 ## usage 🤝
