@@ -167,7 +167,7 @@ class UpdateFlixy:
 
 	def is_there_new_update(self):
 		url = "https://raw.githubusercontent.com/SKbarbon/flixy/main/info.json"
-		return requests.get(url).json()["version"] == version
+		return requests.get(url).json()["version"] != version
 
 
 if __name__ == "__main__":
