@@ -1,10 +1,10 @@
 # flixy ✨
-A pythonista UI library for building powerful UI for iOS & iPadOS using easy-to-use tools.
+A Pythonista UI library for building powerful UI for iOS & iPadOS using easy-to-use tools.
 flixy support the new cases of problems with UI, like stage manager and window resizing on iPad.
 
 ## Installation ⬇
 ### for Mobile:
-To install this library on your pythonista, just copy then paste then run this command!:
+To install this library on your Pythonista, just copy then paste then run this command!:
 ```python
 import requests; exec(requests.get("https://bit.ly/flixy-installer").text);
 ```
@@ -24,12 +24,12 @@ Then install the library using this command:
 ```cmd
 pip install flixy2app --upgrade
 ```
-Note: `flixy` is pythonista-focused library. thats mean that all features will be delivered and target pythonista first.
+Note: `flixy` is Pythonista-focused library. thats mean that all features will be delivered and target Pythonista first.
 
-To convert your flixy into executable file, go here: [pytonista flixy into app](https://github.com/SKbarbon/flixy#convert-your-pythonista-flixy-into-macos-and-windows-app-)
+To convert your flixy into executable file, go here: [pytonista flixy into app](https://github.com/SKbarbon/flixy#convert-your-Pythonista-flixy-into-macos-and-windows-app-)
 
 ### Upgrade the library 🚀!
-on pythonista, there is an auto-updater on the background of the flixy scripts that will check for new updates.
+on Pythonista, there is an auto-updater on the background of the flixy scripts that will check for new updates.
 But on the desktop you need to do that manually. Run this command bellow to update on desktop:
 ```cmd
 pip uninstall flixy2app
@@ -37,7 +37,7 @@ pip install flixy2app --upgrade
 ```
 
 ## usage 🤝
-To learn how to use the library, you can type this command on pythonista:
+To learn how to use the library, you can type this command on Pythonista:
 ```python
 from flixy import *
 import flixy
@@ -60,10 +60,10 @@ flixy.app(target=main)
  
 <img src="https://user-images.githubusercontent.com/86029286/230714340-66fa77ee-9789-45d1-af73-79cda70a5550.jpeg" data-canonical-src="[[https://gyazo.com/eb5c5741b6a9a16c692170a41a49c858.png](https://user-images.githubusercontent.com/86029286/230714340-66fa77ee-9789-45d1-af73-79cda70a5550.jpeg)]([https://user-images.githubusercontent.com/86029286/230713728-41878deb-5714-4a85-a3b5-5225c33729da.png](https://user-images.githubusercontent.com/86029286/230714340-66fa77ee-9789-45d1-af73-79cda70a5550.jpeg))" width="500" />
 
-## Convert your pythonista flixy into macOS and windows app 🪄!!
+## Convert your Pythonista flixy into macOS and windows app 🪄!!
 1- install `flixy2app` using `pip` .
 
-2- Bring your pythonista file.
+2- Bring your Pythonista file.
 
 3- Use this command: `python3 -m flixy2app.generate`. follow the Instructions, then done.
 
