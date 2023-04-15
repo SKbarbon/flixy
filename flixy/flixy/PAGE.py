@@ -11,6 +11,7 @@ class Page (object):
 		self.__ui_view.self_class = self
 		
 		self.controls = []
+		self.overlay = []
 		self.bgcolor = "black"
 		self.title = ""
 		self.__appbar = None
@@ -71,6 +72,11 @@ class Page (object):
 		control_ui_class.x = self.width / 2 - control_ui_class.width / 2
 		self.__ui_view.add_subview(control_ui_class)
 		self.update()
+	
+	def add_overlay (self, control):
+		self.overlay.append(control)
+		control.respown(self)
+		
 	
 	def clear (self):
 		self.controls = []

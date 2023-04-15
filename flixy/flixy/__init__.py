@@ -15,6 +15,8 @@ from .controls.NAVIGATOR import Navigate
 from .controls.SHEET import Sheet
 from .controls.SLIDER import Slider
 from .controls.SWITCH import Switch
+from .controls.snackbar import SnackBar
+from .controls.audio import Audio
 
 from .Tools.subscribers.text_subscribe import textSubscribe
 from .Tools.subscribers.call_on_change import callOnChange

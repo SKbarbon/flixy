@@ -34,6 +34,8 @@ class Slider (object):
 		s = self.self_ui
 		s.value = self.value
 		s.alpha = self.opacity
+		s.width = self.width
+		s.height = self.height
 		
 		# expand set
 		expand_control(self)

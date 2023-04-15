@@ -18,7 +18,10 @@ class Sound (object):
 			if self.on_finish == None: return
 			threading.Thread(target=self.on_finish, args=[self]).start()
 		
-		self.__player = sound.Player(name)
+		try:
+			self.__player = sound.Player(name)
+		except:
+			raise OSError("Error with setting audio player.")
 		self.__player.stop()
 		self.__player.finished_handler = run_at_end
 		self.__player.volume = volume
