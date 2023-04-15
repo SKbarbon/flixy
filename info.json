@@ -1,4 +1,4 @@
 {
-  "version" : "1.5",
-  "news" : "1- New Slider control.\n2- New Switch control.\n3- Update the auto updater tool.\n*Please restart pythonista to apply all changes."
+  "version" : "1.6",
+  "news" : "1- New audio player control.\n2- New overlay property on Page:Class.\n*Please restart pythonista to apply all changes."
 }
