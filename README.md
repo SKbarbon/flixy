@@ -71,3 +71,4 @@ Note: This is BETA! thats mean it may be broken because its on the first release
 
 ## comming soon 🔜
 - Support games develop. making `flixy.game` module.
+- Support mobile apps development.
