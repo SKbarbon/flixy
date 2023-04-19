@@ -1,4 +1,4 @@
 {
-  "version" : "1.7",
-  "news" : "1- Support web apps\n*Please restart pythonista to apply all changes."
+  "version" : "1.8",
+  "news" : "1- Support web apps\n2- fix a problem in web_browser view which actions where not working because of thread.\n*Please restart pythonista to apply all changes."
 }
