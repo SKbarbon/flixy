@@ -4,7 +4,7 @@ from .client_tools import ClientTools
 from .thread_tools import stop_thread
 import os, threading, importlib
 import importlib.util, sys, traceback, os
-
+import gc
 
 
 class FlixyClient:
@@ -103,3 +103,42 @@ class FlixyClient:
 
         self.current_script_thread = threading.Thread(target=try_run)
         self.current_script_thread.start()
+    
+
+    def close_all_ui_views_ios(verbose=True, thread_id=None):
+        """
+        Closes all ui.View objects currently in memory (only runs on iOS / Pythonista).
+
+        Args:
+            verbose (bool): Whether to print actions performed.
+            thread_id (int | None): If provided, only closes views created by that thread
+                                    (requires ._thread_id attr on those views).
+        """
+        # make sure we’re on Pythonista’s iOS runtime
+        if not sys.platform.startswith("ios"):
+            if verbose:
+                print("Skipped: not running on iOS/Pythonista.")
+            return 0
+
+        import ui
+        closed = 0
+
+        for obj in gc.get_objects():
+            try:
+                if isinstance(obj, ui.View):
+                    if thread_id is not None and getattr(obj, "_thread_id", None) != thread_id:
+                        continue
+                    try:
+                        obj.close()
+                        closed += 1
+                        if verbose:
+                            print(f"✅ Closed: {obj}")
+                    except Exception as e:
+                        if verbose:
+                            print(f"⚠️ Failed to close {obj} – {e}")
+            except ReferenceError:
+                pass
+
+        if verbose:
+            print(f"Total closed views: {closed}")
+        return closed

@@ -48,6 +48,7 @@ class ClientTools:
                 elif not u["is_dir"] and os.path.isfile(path):
                     os.remove(path)
         
+            self.client_class.close_all_ui_views_ios()
             self.client_class.rerun_main_script()
     
 
