@@ -132,7 +132,8 @@ class FlixyClient:
                         obj.close()
                         closed += 1
                         if verbose:
-                            print(f"✅ Closed: {obj}")
+                            # print(f"✅ Closed: {obj}")
+                            pass
                     except Exception as e:
                         if verbose:
                             print(f"⚠️ Failed to close {obj} – {e}")

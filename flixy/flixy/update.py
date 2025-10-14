@@ -10,7 +10,7 @@ import requests
 import sound
 import ui
 
-version = "1.9.2"
+version = "1.9.3"
 
 class UpdateFlixy:
 	def __init__ (self, auto_run=True):
